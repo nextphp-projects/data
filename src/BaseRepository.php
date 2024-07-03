@@ -14,7 +14,6 @@
 namespace NextPHP\Data;
 
 use ReflectionClass;
-use NextPHP\Data\Repository;
 
 class BaseRepository
 {
