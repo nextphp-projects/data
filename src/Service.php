@@ -11,7 +11,7 @@
  * @license https://opensource.org/licenses/MIT MIT License
  */
 
-namespace NextPHP\Data\Persistence;
+namespace NextPHP\Data;
 
  #[\Attribute(\Attribute::TARGET_CLASS)]
  /**
