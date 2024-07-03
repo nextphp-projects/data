@@ -1,0 +1,41 @@
+{
+    "name": "nextphp/data",
+    "description": "NextPHP comprehensive database library including ORM and direct SQL query capabilities.",
+    "type": "library",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vedat Yıldırım",
+            "email": "vedat@nextphp.io"
+        }
+    ],
+    "homepage": "https://nextphp.io",
+    "keywords": [
+        "php",
+        "framework",
+        "orm",
+        "database",
+        "sql",
+        "nextphp"
+    ],
+    "support": {
+        "email": "support@nextphp.io",
+        "issues": "https://github.com/nextphp-projects/data/issues"
+    },
+    "autoload": {
+        "psr-4": {
+            "NextPHP\\Data\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "ext-pdo": "*"
+    },
+    "extra": {
+        "documentation": "https://github.com/nextphp-projects/data/wiki",
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
