@@ -1,6 +1,6 @@
 {
     "name": "nextphp/data",
-    "description": "The NextPHP Data package is a powerful tool for PHP developers, providing ORM capabilities and direct SQL query execution. It simplifies database interactions by allowing developers to work with objects instead of raw SQL queries. With support for attributes to define entities and relationships, NextPHP Data ensures a clean and efficient codebase. This package is part of the NextPHP Framework, a modern and lightweight PHP framework designed for performance and scalability. NextPHP aims to provide a comprehensive suite of tools and libraries to streamline the development process.",
+    "description": "The NextPHP Data package is a powerful tool for PHP developers, providing ORM capabilities and direct SQL query execution. This package is part of the NextPHP Framework, a modern and lightweight PHP framework designed for performance and scalability.",
     "type": "library",
     "version": "1.0.0",
     "license": "MIT",
