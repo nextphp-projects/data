@@ -14,7 +14,7 @@
 namespace NextPHP\Data;
 
 use ReflectionClass;
-use NextPHP\Data\Persistence\Repository;
+use NextPHP\Data\Repository;
 
 class BaseRepository
 {
@@ -64,7 +64,7 @@ class BaseRepository
         $columns = [];
 
         foreach ($properties as $property) {
-            $attributes = $property->getAttributes(\NextPHP\Data\Attributes\Column::class);
+            $attributes = $property->getAttributes(\NextPHP\Data\Persistence\Column::class);
             if (!empty($attributes)) {
                 $column = $attributes[0]->newInstance();
                 $columns[$property->getName()] = $column->definition;
@@ -235,7 +235,7 @@ class BaseRepository
     public function getTableName(): string
     {
         $reflection = new \ReflectionClass($this->entityClass);
-        $attributes = $reflection->getAttributes(\NextPHP\Data\Attributes\Entity::class);
+        $attributes = $reflection->getAttributes(\NextPHP\Data\Persistence\Entity::class);
 
         if (empty($attributes)) {
             throw new \Exception("Entity attribute not found for class " . $this->entityClass);

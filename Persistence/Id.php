@@ -20,7 +20,7 @@ namespace NextPHP\Data\Persistence;
  * A simple implementation of a PSR-7 HTTP message interface and PSR-12 extended coding style guide.
  * This class represents the Id attribute.
  *
- * @package NextPHP\Data\Attributes
+ * @package NextPHP\Data\Persistence
  */
 class Id
 {
