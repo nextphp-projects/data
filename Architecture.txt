@@ -1,0 +1,31 @@
+example-project/
+├── app/
+│   ├── Entity/
+│   │   └── User.php
+│   ├── Repository/
+│   │   └── UserRepository.php
+│   ├── Service/
+│   │   └── UserService.php
+├── vendor/
+│   ├── nextphp/
+│   │   ├── data/                           my package folder
+│   │   │   ├── src/
+│   │   │   │   ├── Persistence/
+│   │   │   │   │   ├── Entity.php
+│   │   │   │   │   ├── Id.php
+│   │   │   │   │   ├── Column.php
+│   │   │   │   │   ├── ManyToOne.php
+│   │   │   │   │   ├── OneToMany.php
+│   │   │   │   │   ├── ManyToMany.php
+│   │   │   │   │   ├── OneToOne.php
+│   │   │   │   │   ├── Table.php
+│   │   │   │   ├── BaseRepository.php
+│   │   │   │   ├── Repository.php
+│   │   │   │   ├── Service.php
+│   │   │   │   ├── DatabaseConnector.php
+├── composer.json
+├── index.php
+├── CONTRIBUTING.php
+├── FAQ.php
+├── LICENSE.php
+├── README.php

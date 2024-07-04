@@ -20,7 +20,7 @@
   * A simple implementation of a PSR-7 HTTP message interface and PSR-12 extended coding style guide.
   * This class represents the Repository attribute.
   *
-  * @package NextPHP\Data\Persistence
+  * @package NextPHP\Data
   */
 class Repository
 {
