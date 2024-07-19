@@ -15,52 +15,45 @@ namespace NextPHP\Data;
 
 use ReflectionClass;
 
-class BaseRepository{
-
+class BaseRepository2
+{
     protected $db;
     private $entityClass;
-    private $tableAction = 'none';
 
-public function __construct()
-{
-    $this->entityClass = $this->getEntityClass();
-    $this->db = $this->initializeDatabase();
-    $this->initializeTable($this->tableAction);
-}
-
-private function getEntityClass(): string
-{
-    $reflection = new ReflectionClass($this);
-    $attributes = $reflection->getAttributes(Repository::class);
-    if (!empty($attributes)) {
-        $repositoryAttribute = $attributes[0]->newInstance();
-        return $repositoryAttribute->entityClass;
+    public function __construct()
+    {
+        $this->entityClass = $this->getEntityClass();
+        $this->db = $this->initializeDatabase();
+        $this->initializeTable();
     }
-    throw new \Exception("Repository attribute not found on class " . get_class($this));
-}
 
-private function initializeDatabase()
-{
-    $config = [
-        'dsn' => 'mysql:host=localhost;dbname=nextphp2',
-        'username' => 'root',
-        'password' => '',
-    ];
-    return new DatabaseConnector($config);
-}
+    private function getEntityClass(): string
+    {
+        $reflection = new ReflectionClass($this);
+        $attributes = $reflection->getAttributes(Repository::class);
+        if (!empty($attributes)) {
+            $repositoryAttribute = $attributes[0]->newInstance();
+            return $repositoryAttribute->entityClass;
+        }
+        throw new \Exception("Repository attribute not found on class " . get_class($this));
+    }
 
-private function initializeTable($tableAction)
+    private function initializeDatabase()
+    {
+        $config = [
+            'dsn' => 'mysql:host=localhost;dbname=nextphp2',
+            'username' => 'root',
+            'password' => '',
+        ];
+        return new DatabaseConnector($config);
+    }
+
+    private function initializeTable()
     {
         $tableName = $this->getTableName();
         $columns = $this->getColumnDefinitions();
 
-        if ($tableAction === 'create') {
-            $this->db->createTable($tableName, $columns, []);
-        } elseif ($tableAction === 'drop') {
-            $this->db->dropTable($tableName);
-        } elseif ($tableAction === 'update') {
-            $this->db->updateTable($tableName, $columns);
-        }
+        $this->db->createTable($tableName, $columns);
     }
 
     private function getColumnDefinitions(): array
@@ -142,10 +135,10 @@ private function initializeTable($tableAction)
 
         if ($orderBy) {
             $query .= ' ORDER BY ' . implode(', ', array_map(
-                fn($key, $value) => "$key $value",
-                array_keys($orderBy),
-                $orderBy
-            ));
+                    fn($key, $value) => "$key $value",
+                    array_keys($orderBy),
+                    $orderBy
+                ));
         }
 
         if ($limit) {
@@ -204,10 +197,10 @@ private function initializeTable($tableAction)
 
         if ($orderBy) {
             $query .= ' ORDER BY ' . implode(', ', array_map(
-                fn($key, $value) => "$key $value",
-                array_keys($orderBy),
-                $orderBy
-            ));
+                    fn($key, $value) => "$key $value",
+                    array_keys($orderBy),
+                    $orderBy
+                ));
         }
 
         $stmt = $this->db->prepare($query);
@@ -227,10 +220,10 @@ private function initializeTable($tableAction)
 
         if ($having) {
             $query .= ' HAVING ' . implode(' AND ', array_map(
-                fn($key, $value) => "$key $value",
-                array_keys($having),
-                $having
-            ));
+                    fn($key, $value) => "$key $value",
+                    array_keys($having),
+                    $having
+                ));
         }
 
         $stmt = $this->db->prepare($query);

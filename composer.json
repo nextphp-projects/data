@@ -25,7 +25,8 @@
     },
     "autoload": {
         "psr-4": {
-            "NextPHP\\Data\\": "src/"
+            "NextPHP\\Data\\": "src/",
+            "NextPHP\\App\\": "app/"
         }
     },
     "require": {

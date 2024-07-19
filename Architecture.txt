@@ -8,7 +8,7 @@ example-project/
 │   │   └── UserService.php
 ├── vendor/
 │   ├── nextphp/
-│   │   ├── data/                           my package folder
+│   │   ├── data/
 │   │   │   ├── src/
 │   │   │   │   ├── Persistence/
 │   │   │   │   │   ├── Entity.php
@@ -21,7 +21,6 @@ example-project/
 │   │   │   │   │   ├── Table.php
 │   │   │   │   ├── BaseRepository.php
 │   │   │   │   ├── Repository.php
-│   │   │   │   ├── Service.php
 │   │   │   │   ├── DatabaseConnector.php
 ├── composer.json
 ├── index.php
